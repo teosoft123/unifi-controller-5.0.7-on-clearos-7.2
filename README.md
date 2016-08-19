@@ -42,7 +42,7 @@ my installation of ClearOS. Here's how to fix it:
 	chown -R ubnt:ubnt /opt/UniFi
 	
 #5. Create Startup Script with Systemd
-	#vi /etc/systemd/system/unifi.service
+	# vi /etc/systemd/system/unifi.service
 	#
 	#
 	# Systemd unit file for UniFi Controller
