@@ -10,7 +10,7 @@ You will do everything here as root. The UniFi Controller will run as user ubnt,
 Dependencies mentioned here are avaialable under ./resources 
 
 
-#1. Disable SELinux and update server:
+##1. Disable SELinux and update server:
 
      sed -i /etc/selinux/config -r -e 's/^SELINUX=.*/SELINUX=disabled/g'
      yum -y update
@@ -18,11 +18,11 @@ Dependencies mentioned here are avaialable under ./resources
   
 It worked for me without disabling SELinux, so you can skip this step, too.
 
-#2. Install EPEL Repo
+##2. Install EPEL Repo
 
     yum -y install epel-release
   
-#3. Install Prerequisites
+##3. Install Prerequisites
 
 	useradd -r ubnt
 	yum -y install mongodb-server java-1.8.0-openjdk unzip wget
@@ -35,13 +35,13 @@ my installation of ClearOS. Here's how to fix it:
 	
 	[TODO find proper rpm matching ClearOS]
 
-#4. Download and Extract UniFi Controller
+##4. Download and Extract UniFi Controller
 
 	cd ~ && wget http://dl.ubnt.com/unifi/5.0.7/UniFi.unix.zip
 	unzip -q UniFi.unix.zip -d /opt
 	chown -R ubnt:ubnt /opt/UniFi
 	
-#5. Create Startup Script with Systemd
+##5. Create Startup Script with Systemd
 	# vi /etc/systemd/system/unifi.service
 	#
 	#
@@ -64,19 +64,19 @@ my installation of ClearOS. Here's how to fix it:
 	[Install]
 	WantedBy=multi-user.target
  	
-#6. Configure Firewall
+##6. Configure Firewall
 
 In ClearOS UI, open incoming port 8443
 
-#7. Enable UniFi on Startup
+##7. Enable UniFi on Startup
 
 	systemctl enable unifi.service
 	
-#8. Cleanup
+##8. Cleanup
 	rm -rf ~/UniFi.unix.zip
 	systemctl reboot
 	
-#9. Accessing the UniFi Controller server
+##9. Accessing the UniFi Controller server
 	https://<your-server-ip>:8443
 	
 
