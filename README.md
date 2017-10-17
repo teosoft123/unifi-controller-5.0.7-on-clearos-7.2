@@ -37,6 +37,8 @@ my installation of ClearOS. Here's how to fix it:
 
 ##4. Download and Extract UniFi Controller
 
+	https://www.ubnt.com/downloads/unifi/5.5.24/UniFi.unix.zip
+	
 	cd ~ && wget http://dl.ubnt.com/unifi/5.0.7/UniFi.unix.zip
 	unzip -q UniFi.unix.zip -d /opt
 	chown -R ubnt:ubnt /opt/UniFi
