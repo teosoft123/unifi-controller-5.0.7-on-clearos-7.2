@@ -6,6 +6,11 @@ https://deviantengineer.com/2014/08/unifi-controller-centos7/
 
 ## Notes:
 
+I installed a new version, 5.5.24 in about a year after this original guide was writted. Backup of 5.0.3 and restore to 5.5.24 went uneventfully. New (latest so far) version is here:
+
+https://www.ubnt.com/downloads/unifi/5.5.24/UniFi.unix.zip
+
+
 You will do everything here as root. The UniFi Controller will run as user ubnt, which you create.
 Dependencies mentioned here are avaialable under ./resources 
 
@@ -37,11 +42,10 @@ my installation of ClearOS. Here's how to fix it:
 
 ##4. Download and Extract UniFi Controller
 
-	https://www.ubnt.com/downloads/unifi/5.5.24/UniFi.unix.zip
-	
+
 	cd ~ && wget http://dl.ubnt.com/unifi/5.0.7/UniFi.unix.zip
 	unzip -q UniFi.unix.zip -d /opt
-	chown -R ubnt:ubnt /opt/UniFi
+	*chown -R ubnt:ubnt /opt/UniFi*
 	
 ##5. Create Startup Script with Systemd
 	# vi /etc/systemd/system/unifi.service
