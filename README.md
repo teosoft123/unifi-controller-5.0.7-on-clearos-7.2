@@ -45,7 +45,7 @@ my installation of ClearOS. Here's how to fix it:
 
 	cd ~ && wget http://dl.ubnt.com/unifi/5.0.7/UniFi.unix.zip
 	unzip -q UniFi.unix.zip -d /opt
-	**chown -R ubnt:ubnt /opt/UniFi**
+	chown -R ubnt:ubnt /opt/UniFi
 	
 ##5. Create Startup Script with Systemd
 	# vi /etc/systemd/system/unifi.service
